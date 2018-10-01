@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.roswellpark.org/ontology/RDFCap.owl#"
+     xml:base="http://purl.roswellpark.org/ontology/RDFCap.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdfcap="http://purl.roswellpark.org/ontology/rdfcap/"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:ontology1="http://purl.roswellpark.org/ontology#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:ontology="http://purl.roswellpark.org/ontology/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://purl.roswellpark.org/ontology/RDFCap.owl">
+        <owl:imports rdf:resource="http://purl.roswellpark.org/ontology/2018-08-14/data_entity.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/specifies_iri -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/specifies_iri"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#app_title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#app_title">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>application title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#element_enum -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#element_enum">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>element enum</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#element_label -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#element_label">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>element label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#element_type -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#element_type">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>element type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#enum_label -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#enum_label">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>enum label</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#enum_value -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#enum_value">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>enum value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#event_id -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#event_id">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>event id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#field_name -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#field_name">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>field name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#field_order -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#field_order">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>field order</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#form_name -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#form_name">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>form name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#instance -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#instance">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>instance</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#project_id -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#project_id">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>project id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#project_name -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#project_name">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>project name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#record -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#record">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>record</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/record_value#value -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.roswellpark.org/ontology/rdfcap/record_value#value">
+        <rdfs:subPropertyOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000025"/>
+        <rdfs:label>raw value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/data_collection#redcap_project -->
+
+    <owl:Class rdf:about="http://purl.roswellpark.org/ontology/rdfcap/data_collection#redcap_project">
+        <rdfs:subClassOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000002"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill Duncan &lt;http://orcid.org/0000-0001-9625-1899&gt;</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-14T21:32:21Z</dc:date>
+        <rdfs:label>REDCap project</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/data_record#redcap_metadata_record -->
+
+    <owl:Class rdf:about="http://purl.roswellpark.org/ontology/rdfcap/data_record#redcap_metadata_record">
+        <rdfs:subClassOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000003"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill Duncan &lt;http://orcid.org/0000-0001-9625-1899&gt;</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-14T21:31:24Z</dc:date>
+        <rdfs:label>REDCap metadata record</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.roswellpark.org/ontology/rdfcap/data_record#redcap_project_record -->
+
+    <owl:Class rdf:about="http://purl.roswellpark.org/ontology/rdfcap/data_record#redcap_project_record">
+        <rdfs:subClassOf rdf:resource="http://purl.roswellpark.org/ontology#DE_000000003"/>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bill Duncan &lt;http://orcid.org/0000-0001-9625-1899&gt;</dc:creator>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-08-14T21:31:45Z</dc:date>
+        <rdfs:label>REDCap project record</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

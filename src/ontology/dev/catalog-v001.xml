@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="imports" prefer="public" xml:base="">
+        <uri name="http://purl.roswellpark.org/ontology/2018-08-14/data_entity.owl" uri="imports/data_entity_ontology_import.owl"/>
+        <uri name="http://purl.roswellpark.org/ontology/rdfcap.owl" uri="rdfcap-dev.owl"/>
+    </group>
+</catalog>
