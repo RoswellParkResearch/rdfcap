@@ -1,0 +1,8 @@
+*.pyc
+.idea/
+*~
+*.abcl
+.DS_Store
+credentials.txt
+*class.py
+.env
