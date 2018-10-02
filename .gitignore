@@ -4,4 +4,4 @@
 *.abcl
 .DS_Store
 credentials.txt
-*class.py
+*generated_class.py
