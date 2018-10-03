@@ -78,5 +78,6 @@ if __name__ == "__main__":
                                      'http://purl.roswellpark.org/ontology/omics',  # namespace uri
                                      owl_file=r'/Users/ph37399/projects/Omics DB translation/rdfcap-merged.owl',
                                )
-
-    print graph.serialize(format='turtle')
+    with open('/Users/ph37399/projects/Omics DB translation/Omics translated data.owl', 'w') as f:
+        f.write(graph.serialize(format='turtle'))
+    f.close()
