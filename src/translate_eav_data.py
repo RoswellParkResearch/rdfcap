@@ -13,6 +13,7 @@ sys.setdefaultencoding('utf8')
 
 def get_processed_eav(df, project_meta):
     processed_data = []
+
     for row in df.itertuples():
         row = row.__dict__
 
@@ -177,8 +178,14 @@ def translate_raw_eav(df, data_namespace_uri, project_data, meta_data, data_sour
     if output_format == "multi":
         out_structure = '%s/RDFCap_Structure.owl' % output_dir
         with open(out_structure, "w") as f:
-            f.write(graph.serialize(format='turtle'))
+            f.write(graph.serialize(format='xml'))
         f.close()
+        # rebuild graph
+        if len(owl_file.strip()) > 0:
+            graph = Graph(identifier=data_namespace_uri)
+            graph.parse(owl_file)
+        else:
+            graph = Graph(identifier=data_namespace_uri)
 
     # record/data generation
     processed_data = get_processed_eav(df, project_meta)
@@ -235,9 +242,6 @@ def translate_raw_eav(df, data_namespace_uri, project_data, meta_data, data_sour
                                 str(row['project_name'])
                                 )
 
-            # if int(record_id.split('_')[3]) > 0:
-            #     # instance of
-
             created.append(record_id)
 
         field_uri = nested_uri(make_instance_uri(dent.record_value_uri),
@@ -250,19 +254,20 @@ def translate_raw_eav(df, data_namespace_uri, project_data, meta_data, data_sour
     return graph
 
 if __name__ == "__main__":
-    raw_data = r'Z:\Projects\Phil Whalen\RDFCap\Raw Data\225 135 67 133 all data.txt'
+    raw_data = r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Raw Data/67 all data.txt'
     raw_df = pds.read_csv(raw_data, sep='\t')
 
     graph = translate_raw_eav(raw_df, # raw data
                               'http://purl.roswellpark.org/ontology/rdfcap', # namespace uri
-                               r'Z:\Projects\Phil Whalen\RDFCap\Raw Data\LST_RC Projects.txt', # project data
-                               r'W:/processed_225 135 67 133 metadata.txt',
-                               owl_file=r'Z:\Projects\Phil Whalen\RDFCap\rdfcap-merged.owl',
-                               # output_format='multi',
-                               # output_dir='W:\\') # redcap metadata
-                              )
+                               r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Raw Data/LST_RC Projects.txt', # project data
+                               r'/Volumes/PH37399/processed_225 135 67 133 metadata.txt',
+                               owl_file=r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/rdfcap-merged.owl',
+                               output_format='multi',
+                               output_dir='/Volumes/PH37399'
+                              ) # redcap metadata
+
     print graph.serialize(format='turtle')
 
-    with open('W:/testing multi check.owl', 'w') as f:
-        f.write(graph.serialize(format='turtle'))
+    with open('/Volumes/PH37399/GYN Clinical DB.owl', 'w') as f:
+        f.write(graph.serialize(format='xml'))
     f.close()

@@ -117,6 +117,8 @@ if __name__ == "__main__":
     path_in = r'/Users/ph37399/projects/Omics DB translation/RDTA_All Omics data'
     df = pds.read_csv(path_in, sep='\t')
 
+    print df.columns
+    sys.exit()
     graph_structure = generate_structure_ontology(df, # raw dataframe
                                                   'http://purl.roswellpark.org/ontology/omics',  # namespace uri
                                                   'omics_db', # data_source
