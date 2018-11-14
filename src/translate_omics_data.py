@@ -35,11 +35,15 @@ def generate_structure_ontology(df, data_namespace_uri, data_source, owl_file=""
                                           data_source
                                           ),
                                dent.record_value_uri,
-                               label='%s DP'
+                               label='%s DP' % str(data_source).replace('_', '')
                                )
 
     # columns as data properties
     for column in df.columns:
+        prop_uri = nested_uri(make_instance_uri(dent.record_value_uri),
+                                                data_source,
+                                                column
+                                                )
         dent.declare_data_property(graph,
                                    nested_uri(make_instance_uri(dent.record_value_uri),
                                               data_source,
@@ -50,6 +54,9 @@ def generate_structure_ontology(df, data_namespace_uri, data_source, owl_file=""
                                               ),
                                    label='%s DP' % str(column).replace('_', ' ')
                                    )
+        if column in ['order_date', 'dob']:
+            graph.add((prop_uri, RDF.type, XSD.dateTime))
+
     return graph
 
 
@@ -114,27 +121,25 @@ def translate_raw_data(df, data_namespace_uri, data_source, id_keys=[], owl_file
 
 
 if __name__ == "__main__":
-    path_in = r'/Users/ph37399/projects/Omics DB translation/RDTA_All Omics data'
+    path_in = r'/Users/ph37399/projects/Omics DB Translation/Omics data as of 10 26 2018'
     df = pds.read_csv(path_in, sep='\t')
 
-    print df.columns
-    sys.exit()
     graph_structure = generate_structure_ontology(df, # raw dataframe
-                                                  'http://purl.roswellpark.org/ontology/omics',  # namespace uri
+                                                  'http://purl.roswellpark.org/ontology/omics_structure',  # namespace uri
                                                   'omics_db', # data_source
                                                   owl_file=r'/Users/ph37399/projects/Omics DB translation/rdfcap-merged.owl',
                                                   )
     graph_instance_data = translate_raw_data(df,
-                                             'http://purl.roswellpark.org/ontology/omics',  # namespace uri
+                                             'http://purl.roswellpark.org/ontology/omics_instance',  # namespace uri
                                              'omics_db', # data_source
                                              id_keys=['mrn', 'alias_report_id'],
                                              owl_file=r'/Users/ph37399/projects/Omics DB translation/rdfcap-merged.owl',
                                              )
 
-    with open('/Users/ph37399/projects/Omics DB translation/Omics ontology structure.owl', 'w') as f:
+    with open('/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Final owl files/Omics ontology structure_2018 10 26.owl', 'w') as f:
         f.write(graph_structure.serialize(format='xml'))
     f.close()
 
-    with open('/Users/ph37399/projects/Omics DB translation/Omics instance data.owl', 'w') as f:
+    with open('/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Final owl files/Omics instance data_2018 10 26.owl', 'w') as f:
         f.write(graph_instance_data.serialize(format='xml'))
     f.close()

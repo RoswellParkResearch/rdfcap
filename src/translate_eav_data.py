@@ -17,7 +17,7 @@ def get_processed_eav(df, project_meta):
     for row in df.itertuples():
         row = row.__dict__
 
-        # composite record_id data
+        # composite record_id datas
         pid = str(row['project_id']).replace('.0', '')
         event = str(row['event_id']).replace('.0', '')
         record = str(row['record']).replace('.0', '')
@@ -180,7 +180,7 @@ def translate_raw_eav(df, data_namespace_uri, project_data, meta_data, data_sour
         with open(out_structure, "w") as f:
             f.write(graph.serialize(format='xml'))
         f.close()
-        # rebuild graph
+        # rebuild graph3
         if len(owl_file.strip()) > 0:
             graph = Graph(identifier=data_namespace_uri)
             graph.parse(owl_file)
@@ -254,20 +254,20 @@ def translate_raw_eav(df, data_namespace_uri, project_data, meta_data, data_sour
     return graph
 
 if __name__ == "__main__":
-    raw_data = r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Raw Data/67 all data.txt'
+    raw_data = r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Raw Data/67 data.txt'
     raw_df = pds.read_csv(raw_data, sep='\t')
 
     graph = translate_raw_eav(raw_df, # raw data
                               'http://purl.roswellpark.org/ontology/rdfcap', # namespace uri
                                r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/Raw Data/LST_RC Projects.txt', # project data
-                               r'/Volumes/PH37399/processed_225 135 67 133 metadata.txt',
+                               r'/Volumes/Users$/processed_225 135 67 133 293 metadata.txt',
                                owl_file=r'/Volumes/cdn$/Projects/Phil Whalen/RDFCap/rdfcap-merged.owl',
                                output_format='multi',
-                               output_dir='/Volumes/PH37399'
+                               output_dir='/Volumes/Users$'
                               ) # redcap metadata
 
     print graph.serialize(format='turtle')
 
-    with open('/Volumes/PH37399/GYN Clinical DB.owl', 'w') as f:
+    with open('/Volumes/Users$/GYN Clinical DB.owl', 'w') as f:
         f.write(graph.serialize(format='xml'))
     f.close()
